@@ -13,6 +13,7 @@ APT_DEPENDENCIES = {
     'bionic': [],
     'focal': [],
     'jammy': [],
+    'noble': [],
     # Debian
     'buster': [],
     'bullseye': [],

@@ -41,6 +41,7 @@ PROGRAM_DESCRIPTION = 'Firmware Analysis and Comparison Tool (FACT) Extractor in
 BIONIC_CODE_NAMES = ['bionic', 'tara', 'tessa', 'tina', 'disco']
 FOCAL_CODE_NAMES = ['focal', 'ulyana', 'uma', 'una']
 JAMMY_CODE_NAMES = ['jammy', 'vanessa']
+NOBLE_CODE_NAMES = ['noble', 'wilma']
 
 # Compatible Debian/Kali releases
 BUSTER_CODE_NAMES = ['buster', 'stretch']
@@ -82,6 +83,10 @@ def check_distribution():
     if codename in JAMMY_CODE_NAMES:
         logging.debug('Ubuntu 22.04 detected')
         return 'jammy'
+    if codename in NOBLE_CODE_NAMES:
+        logging.warning('Ubuntu 24.04 support is experimental!')
+        logging.debug('Ubuntu 24.04 detected')
+        return 'noble'
     if codename in BUSTER_CODE_NAMES:
         logging.debug('Debian 10 detected')
         return 'buster'
@@ -90,7 +95,7 @@ def check_distribution():
         return 'bullseye'
     sys.exit(
         f'Your Distribution ({distro.id()} {distro.version()}) is not supported. '
-        f'FACT Extractor Installer requires Ubuntu 18.04/20.04/22.04, Debian 9/10, Kali or compatible!'
+        f'FACT Extractor Installer requires Ubuntu 18.04/20.04/22.04/24.04, Debian 9/10, Kali or compatible!'
     )
 
 
