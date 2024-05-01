@@ -162,7 +162,7 @@ DEPENDENCIES = {
             'unzip',
             'wget',
             # android sparse image
-            'simg2img',
+            'android-sdk-libsparse-utils',
             # 7z
             'yasm',
         ],
